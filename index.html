@@ -17,9 +17,6 @@ background-size: 100% 100%;
 <div id="main" style="color:pink;width:500px;margin-left:100px;font-size:25px"></div>
 </b>
 <script>
-var width = document.body.offsetWidth;
-var left = (width-500)/2;
-document.getElementById('main').style.marginLeft  = ""+left+"px";
 
 var text = "xxx小公主x和你在一起那么久了，说起来，还欠你一个正式的告白呢。虽然我们的Luke老爹又逗比又不靠谱，可能他做的唯一一件靠谱的事就是让我们相识了。也不知道什么时候喜欢上你的，或许是看你捧着雪，小手冻得通红，又或许是你低着头的复习，长发垂下来的样子。每次想到你都会不由自主的微笑，这几天在一起的生活也让我出国第一次有了家的感觉。我不帅，我才气匮乏，但如果可以，我想跟你在一起，让你开心幸福。我会用一辈子来证明，你跟着我是多么正确和明智的决定。x——Ran";
 
@@ -37,7 +34,12 @@ function display() {
   setInterval(getChar, 100);
 }
 
+window.onload = function() {
+var width = document.body.offsetWidth;
+var left = (width-500)/2;
+document.getElementById('main').style.marginLeft  = ""+left+"px";
 display();
+}();
 </script>
 </body>
 </html>
