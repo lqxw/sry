@@ -34,11 +34,10 @@ function display() {
 }
 
 window.onload = function() {
-var width = document.body.offsetWidth;
-var height = document.body.offsetHeight;
+var width = window.innerWidth;
+var height = window.innerHeight;
 document.getElementsByTagName('body')[0].style.width = width;
 document.getElementsByTagName('body')[0].style.height = height;
-
 alert(width);
 alert(height);
 if (width > height) { //desktop
