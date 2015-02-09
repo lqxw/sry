@@ -37,11 +37,9 @@ function display() {
 
 window.onload = function() {
 var width = document.body.offsetWidth;
-document.getElementById('main').style.width  = ""+width+"px";
-var left = width/3;
-document.getElementById('main').style.marginLeft  = ""+left+"px";
-if (mobile) {
-}
+var onethird = width/3;
+document.getElementById('main').style.width  = ""+onethird+"px";
+document.getElementById('main').style.marginLeft  = ""+onethird+"px";
 display();
 }();
 </script>
