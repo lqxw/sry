@@ -40,6 +40,10 @@ function display() {
 window.onload = function() {
 var width = window.innerWidth;
 var height = window.innerHeight;
+var elHeight = document.documentElement.offsetHeight;
+var elWidth = document.documentElement.offsetWidth;
+alert("elHeight "+elWidth);
+alert("elWidth "+elWidth);
 alert(width);
 alert(height);
 document.getElementsByTagName('body')[0].style.width = width;
