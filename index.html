@@ -41,31 +41,38 @@ function display() {
 }
 
 window.onload = function() {
-var width = window.innerWidth;
-var height = window.innerHeight;
-var elHeight = document.documentElement.offsetHeight;
-var elWidth = document.documentElement.offsetWidth;
-alert("elHeight "+elWidth);
-alert("elWidth "+elWidth);
-alert(width);
+var body = document.body,
+    html = document.documentElement;
+var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+                       
+var width = Math.max( body.scrollWidth, body.offsetWidth, 
+                       html.clientWidth, html.scrollWidth, html.offsetWidth);
 alert(height);
-document.getElementsByTagName('body')[0].style.width = width;
-document.getElementsByTagName('body')[0].style.height = height;
-//alert(width);
-//alert(height);
-if (width > height) { //desktop
-  var onethird = width/3;
-  document.getElementById('main').style.marginLeft  = ""+onethird+"px";
-  document.getElementById('main').style.width  = ""+onethird+"px";
-  document.getElementById('main').style.fontSize  = "25px";
-}
-else {
-  var margin = width/6;
-  var content = width/6*4;
-  document.getElementById('main').style.marginLeft  = ""+margin+"px";
-  document.getElementById('main').style.width  = ""+content+"px";
-}
-display();
+alert(width);
+/*
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  var elHeight = document.documentElement.offsetHeight;
+  var elWidth = document.documentElement.offsetWidth;
+  alert("elHeight "+elWidth);
+  alert("elWidth "+elWidth);
+  alert(width);
+  alert(height);
+*/
+  if (width > height) { //desktop
+    var onethird = width/3;
+    document.getElementById('main').style.marginLeft  = ""+onethird+"px";
+    document.getElementById('main').style.width  = ""+onethird+"px";
+    document.getElementById('main').style.fontSize  = "25px";
+  }
+  else {
+    var margin = width/6;
+    var content = width/6*4;
+    document.getElementById('main').style.marginLeft  = ""+margin+"px";
+    document.getElementById('main').style.width  = ""+content+"px";
+  }
+  display();
 }();
 </script>
 </body>
