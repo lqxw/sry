@@ -10,13 +10,15 @@ html, body {
 }
 
 body {
-  background-image: url("images/bg.png");
+  background-image: url("images/bg4.jpg");
   background-repeat:no-repeat;
   background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
 }
 </style>
 </head>
-<body background="images/bg.png">
+<body>
 <div id="main" style="color:#FF0080;width:0px;margin-left:0px;font-size:12px"></div>
 <script>
 
@@ -41,25 +43,16 @@ function display() {
 }
 
 window.onload = function() {
-var body = document.body,
-    html = document.documentElement;
-var height = Math.max( body.scrollHeight, body.offsetHeight, 
-                       html.clientHeight, html.scrollHeight, html.offsetHeight );
-                       
-var width = Math.max( body.scrollWidth, body.offsetWidth, 
-                       html.clientWidth, html.scrollWidth, html.offsetWidth);
-alert(height);
-alert(width);
-/*
-  var width = window.innerWidth;
-  var height = window.innerHeight;
-  var elHeight = document.documentElement.offsetHeight;
-  var elWidth = document.documentElement.offsetWidth;
-  alert("elHeight "+elWidth);
-  alert("elWidth "+elWidth);
-  alert(width);
-  alert(height);
-*/
+  var body = document.body;
+  var html = document.documentElement;
+  var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                         html.clientHeight, html.scrollHeight, html.offsetHeight );
+  var width = Math.max( body.scrollWidth, body.offsetWidth, 
+                         html.clientWidth, html.scrollWidth, html.offsetWidth);
+  if (width == 0) { //random bug at chrome mobile
+    width = 360;
+    height = 600;
+  }
   if (width > height) { //desktop
     var onethird = width/3;
     document.getElementById('main').style.marginLeft  = ""+onethird+"px";
@@ -71,6 +64,7 @@ alert(width);
     var content = width/6*4;
     document.getElementById('main').style.marginLeft  = ""+margin+"px";
     document.getElementById('main').style.width  = ""+content+"px";
+    body.style.backgroundImage = "url('bg3_m.jpg')";
   }
   display();
 }();
