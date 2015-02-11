@@ -49,7 +49,8 @@ window.onload = function() {
                          html.clientHeight, html.scrollHeight, html.offsetHeight );
   var width = Math.max( body.scrollWidth, body.offsetWidth, 
                          html.clientWidth, html.scrollWidth, html.offsetWidth);
-  if (width == 0) { //random bug at chrome mobile
+  alert(""+width+" "+height);
+  if (width == 0 || height == 0) { //random bug at chrome mobile
     width = 360;
     height = 600;
   }
