@@ -58,7 +58,8 @@ window.onload = function() {
     var onethird = width/3;
     document.getElementById('main').style.marginLeft  = ""+onethird+"px";
     document.getElementById('main').style.width  = ""+onethird+"px";
-    document.getElementById('main').style.fontSize  = "25px";
+    if (width > 800)
+      document.getElementById('main').style.fontSize  = "25px";
   }
   else {
     var margin = width/6;
