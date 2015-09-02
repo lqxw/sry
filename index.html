@@ -1,78 +1,87 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width,height=device-height,user-scalable=0" />
-<title>TO最亲爱的你</title>
+<link rel="shortcut icon" href="img/xin.png">
+<title>呆呆の老婆</title>
 <style type="text/css">
-html, body {
-    margin: 0;
-    height: 100%;
+.wrapper{
+	width:960px;
+	margin-left:20px;
 }
-
+h1{
+	font-size:30px;
+	color:#ccc;
+}
 body {
-  background-image: url("images/bg3.jpg");
+  //background-image: url("bg/6.jpg");
+  background-color: #ffccff;
   background-repeat:no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
   background-position: center;
 }
+#gallery { width:640px;height:auto;margin:0 auto; position:relative; }
+ul#thumbnails { padding:0 0 0 10px; margin:0; list-style:none; }
+ul#thumbnails li { float:left; position:relative; top:670px; }
+ul#thumbnails li a { height:50px; width:50px; padding:3px; display:block; text-decoration:none; background:#fff; }
+ul#thumbnails li a img { width:50px; height:50px; border:0; }
+ul#thumbnails li a:hover { background:#fc0; }
+ul#thumbnails li.close a:hover { background:#fff; }
+#gallery #fullsize { position:absolute; left:0; top:0; height:640px; width:640px; overflow:hidden; }
+#gallery #fullsize div { width:640px; height:840px; padding-top:25px; }
+#gallery #fullsize div img { display:block; margin:0 auto; border:0; }
 </style>
 </head>
 <body>
-<div id="main" style="color:#FF0080;width:0px;margin-left:0px;font-size:12px"></div>
+<script type="text/javascript" class="autoinsert" src="js/jquery-1.2.6.min.js"></script> 
+<script src="js/snowfall.jquery.js"></script> 
+<!--
+<div class="wrapper">
+			<h1>呆呆の老婆</h1>
+		</div>
+-->
+<div id="gallery">
+  <ul id="thumbnails">
+    <li><a href="#pic1"><img src="img/1.jpg" alt="1" /></a></li>
+    <li><a href="#pic2"><img src="img/2.jpg" alt="2" /></a></li>
+    <li><a href="#pic3"><img src="img/3.jpg" alt="3" /></a></li>
+    <li><a href="#pic4"><img src="img/4.jpg" alt="4" /></a></li>
+    <li><a href="#pic5"><img src="img/5.jpg" alt="5" /></a></li>
+    <li><a href="#pic6"><img src="img/6.jpg" alt="6" /></a></li>
+    <li><a href="#pic7"><img src="img/7.jpg" alt="7" /></a></li>
+    <li><a href="#pic8"><img src="img/8.jpg" alt="8" /></a></li>
+    <li><a href="#pic9"><img src="img/9.jpg" alt="9" /></a></li>
+    <li><a href="#pic10"><img src="img/10.jpg" alt="10" /></a></li>
+  </ul>
+  <div id="fullsize">
+    <div id="pic1"><img src="img/1.jpg" alt="pic1" /></div>
+    <div id="pic2"><img src="img/2.jpg" alt="pic2" /></div>
+    <div id="pic3"><img src="img/3.jpg" alt="pic3" /></div>
+    <div id="pic4"><img src="img/4.jpg" alt="pic4" /></div>
+    <div id="pic5"><img src="img/5.jpg" alt="pic5" /></div>
+    <div id="pic6"><img src="img/6.jpg" alt="pic6" /></div>
+    <div id="pic7"><img src="img/7.jpg" alt="pic7" /></div>
+    <div id="pic8"><img src="img/8.jpg" alt="pic8" /></div>
+    <div id="pic9"><img src="img/9.jpg" alt="pic9" /></div>
+    <div id="pic10"><img src="img/10.jpg" alt="pic10" /></div>
+  </div>
+</div>
+
+<div style="width:550px;margin:20px auto; clear:both;">
+
+</div>
 <script>
-
-var text = "xxx小公主x和你在一起那么久了，说起来，还欠你一个正式的告白呢。虽然我们的Luke老爹又逗比又不靠谱，可能他做的唯一一件靠谱的事就是让我们相识了。也不知道什么时候喜欢上你的，或许是看你捧着雪，小手冻得通红，又或许是你低着头的复习，长发垂下来的样子。每次想到你都会不由自主的微笑，这几天在一起的生活也让我出国第一次有了家的感觉。x我不帅，我才气匮乏，但如果可以，我想跟你在一起，让你开心幸福。我会用一辈子来证明，你跟着我是多么正确和明智的决定。x——Ran";
-
-var index = -1;
-var timeID;
-
-function getChar() {
-  index++;
-  if (index >=  text.length ) {
-    clearInterval(timeID);
-    return false;
-  }
-  var nextChar = text[index];
-  if (nextChar == "x") nextChar = "<br>";
-  document.getElementById('main').innerHTML += nextChar;
-}
-
-function display() {
-  timeID = setInterval(getChar, 100);
-}
-
-window.onload = function() {
-  var body = document.body;
-  var html = document.documentElement;
-  var height = Math.max( body.scrollHeight, body.offsetHeight, 
-                         html.clientHeight, html.scrollHeight, html.offsetHeight );
-  var width = Math.max( body.scrollWidth, body.offsetWidth, 
-                         html.clientWidth, html.scrollWidth, html.offsetWidth);
-  if (width == 0 || height == 0) { //random bug at chrome mobile
-    width = 360;
-    height = 600;
-  }
-  if (width > height) { //desktop
-    console.log("width height is "+width+" "+height);
-    var onethird = width/3;
-    document.getElementById('main').style.marginLeft  = ""+onethird+"px";
-    document.getElementById('main').style.width  = ""+onethird+"px";
-    if (width > 800)
-      document.getElementById('main').style.fontSize  = "25px";
-  }
-  else {
-    var margin = width/6;
-    var content = width/6*4;
-    document.getElementById('main').style.marginLeft  = ""+margin+"px";
-    document.getElementById('main').style.width  = ""+content+"px";
-    body.style.backgroundImage = "url('images/bg3_m.jpg')";
-  }
-  display();
-}();
+        $(document).snowfall('clear');
+        $(document).snowfall({
+            image: "img/huaban.png",
+            flakeCount:30,
+            minSize: 5,
+            maxSize: 15
+        });
 </script>
-<audio autoplay>
-<source src="music/bk.mp3" type="audio/mpeg">
-</audio>
+
 </body>
+
+
 </html>
