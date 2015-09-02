@@ -1,0 +1,17 @@
+﻿change pic order
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch gh-pages
+# Your branch is up-to-date with 'origin/gh-pages'.
+#
+# Changes to be committed:
+#	renamed:    img/9.jpg -> img/1.jpg
+#	renamed:    img/1.jpg -> img/2.jpg
+#	renamed:    img/2.jpg -> img/3.jpg
+#	renamed:    img/3.jpg -> img/4.jpg
+#	renamed:    img/4.jpg -> img/6.jpg
+#	renamed:    img/6.jpg -> img/7.jpg
+#	renamed:    img/7.jpg -> img/9.jpg
+#	modified:   index.html
+#
+
